@@ -9,6 +9,7 @@ export function MovieCard({movie}:Props){
             <div className="p-2">
                 <img src="/star.svg"/>
                 {movie.title} 
+                slkdjflksjdflkjsdlkfjlskj
             </div>
             
         </div>
