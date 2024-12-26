@@ -1,10 +1,11 @@
-import { Movie } from "./types"
+import Link from "next/link";
+import { Movie } from "./types";
 type Props = {
     movie: Movie
 }
 export function MovieCard({movie}:Props){
     return(
-        <div className="w-full max-w-[230px] rounded-lg bg-muted text-card-foreground overflow-hidden">
+        <Link href={`/movie/${movie.id}`} className="w-full h-full max-w-[230px] rounded-lg bg-muted text-card-foreground overflow-hidden  ">
             <img src={movie.poster}/>
             <div className="p-2 grid">
                 <div className="flex text-xs">
@@ -16,6 +17,6 @@ export function MovieCard({movie}:Props){
                 </div>
                 <div>{movie.title}</div>
             </div>
-        </div>
+        </Link>
     );
 }
