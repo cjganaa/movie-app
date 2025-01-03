@@ -34,10 +34,15 @@ export function MovieDetail({id}:Params){
                 id: data.id,
                 adult: data.adult,
                 background_img: `https://image.tmdb.org/t/p/w1920_and_h600_multi_faces${data.backdrop_path}`,
+                poster: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
                 language: data.origin_country[0],
                 title: data.original_title,
                 overview: data.overview,
                 rate: data.vote_average,
+                release_date: data.release_date,
+                runtime:data.runtime,
+                vote_count:data.vote_count,
+                genres:data.genres,
             };
             setMovie(formattedMovies);
             } catch (error) {
@@ -45,13 +50,12 @@ export function MovieDetail({id}:Params){
         }
     };    
     useEffect(() => {
-        
         fetchData();
-    }, []);
+    }, [id]);
     return (
-        <div>
+        <div className="lg:relative lg:flex lg:justify-start lg:items-center">
             <img src={movie?.background_img} className="w-full"/>
-            <div className="p-5">
+            <div className="p-5 lg:absolute">
                 <div className="flex justify-between items-center">
                     <div>
                         <div className="text-sm font-normal">Now Playing:</div>

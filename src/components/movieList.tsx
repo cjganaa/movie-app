@@ -5,13 +5,16 @@ import { MovieCard } from "@/components/movieCard";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import { OPTIONS } from "@/app/constValue";
+import { UnderMovieCard } from "./underMoviePoster";
+import { Dispatch, SetStateAction } from "react";
 
 type Props = {
     title:string,
-    url:string
+    url:string,
+    setMovie: Dispatch<SetStateAction<number>>,
 }
 
-export function MovieList({title,url}:Props){
+export function MovieList({title,url,setMovie}:Props){
     const [movies, setMovies] = useState<Movie[]>([]);
     
      
